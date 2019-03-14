@@ -1,0 +1,38 @@
+<div class="jumbotron">
+  <h1 class="display-4">Student Portal</h1>
+  <div *ngIf="addStudentFlag" >
+  <p class="lead">This page consists of all the details of students.</p>
+  <!-- <hr class="my-4"> -->
+  <!-- <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p> -->      
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let details of studentDetails" >
+          <td>{{details.name}}</td>
+          <td>{{details.age}}</td>
+          <td>{{details.gender}}</td>
+          <td>{{details.address}}</td>
+          <td>
+            <button (click)="_edit(details)">Edit</button>
+             <button (click)="_delete(id)">Delete </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div>
+      <button class="btn btn-primary" (click)="_add()">Add</button>
+      <button class="btn btn-primary print">Print</button>
+    </div>
+</div>
+</div>
